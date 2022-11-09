@@ -1,30 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace program_1_5
+﻿// Используем ресурсы Visual Basic:
+using System;
+using Microsoft.VisualBasic;
+using System.Windows.Forms;
+// Класс с главным методом программы:
+class EnteringInteger
 {
-    internal class InputConsoleDemo
+    // Главный метод программы:
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-            // Текстовая переменная:
-            string name;
-            // Заголовок консольного окна:
-            Console.Title = "Давайте познакомимся...";
-            // Сообщение в консоле:
-            Console.Write("Как вас зовут? ");
-            // Считывание текста:
-            name=Console.ReadLine();
-            // Еще одна текстовая переменная:
-            string txt = "Очень приятно, "+name+"!";
-            // Заголовок консольного окна:
-            Console.Title = "Знакомство состоялось";
-            // Сообщение в консоле:
-            Console.WriteLine(txt);
-            Console.ReadLine();
-        }
+        // Тестовые переменные:
+        string res, txt;
+        // Целочисленные переменные:
+        int year = 2022, age, born;
+        // Отображение окна с полем ввода:
+        res = Interaction.InputBox(
+                "В каком году вы родились?", // Текст над полем ввода:
+                "Год рождения"               // Название окна:
+        );
+        // Преобразование текста в число:
+        born = Int32.Parse(res);
+        // Вычисление возраста:
+        age = year - born;
+        txt = "Тогда Вам " + age + " лет";
+        // Окно с сообщением:
+        MessageBox.Show(txt, "Возраст");
     }
 }
